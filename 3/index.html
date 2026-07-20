@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stratum Studio</title>
+<meta name="description" content="Stratum Studio — piezas de exhibición impresas en 3D. Objetos de colección que transforman fósiles en espacios cotidianos. Osorno, Chile.">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAMCklEQVR4nO3cX2tcd37H8e/vzMjWugaXLGkgTtdJ7L0o9F9yVQq96DMI9FH0qRR60afSixa2FyVQ0osSCC0rGna8qSleakwv2pLFkqXz64XGWe2upRGfleZIc14vGDzWzMVXjHTec36/M2off/zxz6rqbgHA5R0uq+r7rbU7U08CwO3Rez9ZttaOq2pv6mEAuD1aa6+XVdXWNwC4lN57G6YeAoDbabnh8d57P9nKJADcKK21oarOPdG4MCCttTYMw6bIALCDeu/Vez/38fPi0FtrbRzHp1X1RWtt0Xsfr2VCAG6U1trQez9prf1Ja+2H/bQiv7ZX/taA9N5PhmFYttb+4enTp3957dMCcOM8fvz4b1prPxzH8aS19mu92LQ8dbeqlo8ePVo+e/bs+HpGBOAmOXPMv/BD5hs30avq+MMPPywBAZiHM8f88zdA6oLddQC4iIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABBZTj3AlrUSTeD6jFXVpx5iW+YWkF5VJ1MPAbAL5hKQVlX93Xffvf/gwYM/7707CwGuXGvtH1er1f/W+pgz9TzXbVYBuXfv3u+21v62tTb1PMAOOjo6+qSqvioB2T2ttXEcx9d1ug/S6/RFBrgSi8ViVkvkswrI2qIEBLgGvfdZHVPsBQAQERAAInNcwupnbgCE5hiQxfrfWa1VAly1WQWktdZ774dlEx24Bq21Wa1szCUgY1XVO++8883Lly9/b24vMnD9eu/t/v37z9f/HScdZkvmEpCqqvryyy9fV9U3U88BsAtmFZA1V54B12UWZx5vzDEgs3qBAa6Ld+MARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAESWUw8wgcXUAwA7a6yqPvUQ2zLHgJxMPQDALphLQFpV9ffee++37t+//2e99zb1QMDu2dvb+6evv/76/2p9zJl6nus2q4Ds7+//YBiGv596GGA3vXr16pOq+qoEZPe01sZxHF/X6cUDvU5fZIArMQzDOPUM2zSrgKwtSkAAfmMu4wUgIiAARAQEgIiAABCZY0DefM820AF+A3O5Cmusqloul//Re/99HyQErsM4jqs3dycdZEvmEpCqqlqtVodV9eOp5wDYBbMKyNocl+2A7ZjFmccbcwzIrF5ggOvi3TgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIAJHl1ANMYDH1ANwqJ1MPADfVHAPigABwBWYVkA8++OB7d+/e/eOp5+B2GIZhfP/997/8/PPPj6eeBW6iuQRkqKpxsVg8aq19MfUw3HyttRrH8ecvXrz4QVX9d1W1quoTjwU3ylwCUlVVrbXeez+p06D0Oj0owK9687PxahgG0YBzzCoga61+EQ4B4Txnf06At3AZLwARAQEgIiAARAQEgMgcA2IDnU38jMAlzOUqrLGq6t69e98cHh7+wdTDcPP13msYhvHg4OB/3nxp0oHgBppLQKqq6uDg4Kiqfjz1HAC7YFYBWZvjsh25ceoB4KaaY0AcEACugHfjAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEllMPwJVbTD0AzNhYVX3qIbZFQHbPydQDAPMgIDvkyZMnd3vvn/beh9Za7723qWeCOfn222+/evHixbdTz7EtArIbhqoaj46OHu7t7X0xDKdbW63pB2zT/v7+J1X1Va1/J6ed5voJyG7pvffDqtqr03VYBYEtGoZh56NxloDsnmF9ExDgWrmMF4CIgAAQERAAIvZAdk+vX3yYyR4IXL9WM/19E5Ad01q74/Jd2LpWVTW3z14JyG4Yq6ru3Lnzs977n47jOLTWZvPnFGBqvffWWuuHh4c/WX9pFpfzCsgOWa1Wh1X1z1PPAcyDgOwef0wRpjOrv0UnILtnVj/AwHRcxgtAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQGS54fFWVcPLly+HEhuATcapB9imTQF5XVXjwcHB0TaGAeD2OC8graqq9/47H3300R8Ow7A3DMPJFucCuHWOjo7+/dmzZ6+mnmNb3hqQ1tpiHMdqrX3WWvusqqr3vtXBAG6bYRj+qKr+tU6X/Hd+OWvTEtZ3BASAs2yMAxAREAAiAgJAREAAiGzaRO/rGwD8ko2fRG+tta1MAnDLjeM4q1Wdtwak936yWCwW4zj+XVX91TiOCx8kBLjYgwcPfrK+O4uVm/POQN588/+5Wq0+39YwADti1gF5405VLZ48ebJcrVbH2xgI4BYbaybxqLrcJvrJw4cP22q1soQFwHdmteEDwNUREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQWW54vFXV8PLly6HEBmCTceoBtunCgLTWjqtqPDg4ONrSPADcEucFpK3//e1Hjx59uFgs9pbL5fG2hgK4jZbL5fM5veF+a0Baa4txHKuq/mKxWHxWVe34WD8ALnJ8fPxpVf1bnS757/xy1qY9kKG1Zu8D4BLGcWybn7U7NgWkqqpf+xQA3DqXCcisigrA5VieAiAiIABENi1h9bIHAsBbbPogYWuttd57tWYrBOAix8fHs1rVeWtAeu8nwzAseu8/qqq/7r0PVXWy3dEAbpW2v7//dH1/Fis3552B9NZa9d5/ulqtfrTViQBuv1kH5I27VbV48uTJcrVa+Sg6wMXGmkk8qi63iX7y8OHDtlqtLGEB8J1ZbfgAcHUEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAyHLD462qFs+fP19UVd/CPABM7Mwxv130vE0BOaqqk9VqdXJVgwFws5055h9e9Lz2+PHjn1fV937l67211nrvz3rv/7K+7wwEYAZaa0PvfayqT4dh+Hh9/P+ls5He++F5ZyCt916ttUfDMDy69mkBuHF677U+d3jrUtaFS1j9lOUrgHlpdboHsqgL9kEus4m+6TkAzJDLeAGILOv0NMUGOQCX1lrry6raa61deK0vAJzVe99b9t7/q/d+r5yFAHA5rape/T9t4QbWGmFK+AAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@0,400;0,600;1,500&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.4.0/dist/model-viewer.min.js"></script>
+<style>
+  :root{
+    --grafito:#232323;
+    --marfil:#F2EFE9;
+    --marfil-2:#EAE5DB;
+    --terracota:#A56A4A;
+    --terracota-dark:#7C4F37;
+    --piedra:#8D8A84;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--marfil);
+    color:var(--grafito);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:120px 24px 96px;
+    text-align:center;
+    border-bottom:1px solid rgba(35,35,35,0.08);
+  }
+  .hero .kicker{
+    font-size:11px; letter-spacing:0.3em; text-transform:uppercase;
+    color:var(--piedra);
+    margin-bottom:22px;
+  }
+  .hero .purpose{
+    font-family:'Inter', sans-serif;
+    font-weight:500;
+    font-size:clamp(19px, 3vw, 25px);
+    color:var(--grafito);
+    max-width:440px;
+    margin:0 auto 30px;
+    line-height:1.4;
+  }
+  .hero img{width:68px; height:68px; margin-bottom:24px; object-fit:contain;}
+  .hero h1{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    font-size:clamp(36px, 7vw, 62px);
+    letter-spacing:0.04em;
+    line-height:1.05;
+    color:var(--grafito);
+  }
+  .hero p.tagline{
+    font-style:italic;
+    color:var(--piedra);
+    max-width:420px;
+    margin:26px auto 0;
+    font-size:14.5px;
+    line-height:1.7;
+  }
+  .divider{
+    width:64px; height:2px; background:var(--terracota);
+    margin:34px auto 0;
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section.block{padding:72px 24px;}
+  section.block:nth-of-type(even){background:var(--marfil-2);}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--terracota); font-weight:600;
+    border:1px solid var(--terracota); border-radius:2px;
+    padding:4px 10px;
+    margin-bottom:16px;
+  }
+  h2.block-title{
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:clamp(22px, 3.4vw, 30px);
+    letter-spacing:-0.01em;
+    margin-bottom:10px;
+  }
+  p.block-desc{
+    color:var(--piedra);
+    max-width:560px;
+    margin-bottom:34px;
+    font-size:15px;
+  }
+
+  /* ---------- SPECIMEN CARD (shared look) ---------- */
+  .specimen-card{
+    background:var(--white);
+    border:1px solid rgba(35,35,35,0.10);
+    border-radius:4px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+  }
+  @media (max-width:720px){ .specimen-card{grid-template-columns:1fr;} }
+
+  .specimen-stage{
+    background:
+      linear-gradient(rgba(35,35,35,0.04), rgba(35,35,35,0.04)),
+      var(--marfil);
+    min-height:320px;
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  model-viewer{width:100%; height:320px; --poster-color: transparent;}
+
+  .photo-placeholder{
+    width:100%; height:320px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:10px;
+    color:var(--piedra);
+    background:
+      repeating-linear-gradient(135deg, rgba(35,35,35,0.035) 0 2px, transparent 2px 14px),
+      var(--marfil);
+  }
+  .photo-placeholder .ph-label{
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--piedra);
+  }
+  .view-toggle{
+    position:absolute; bottom:14px; right:14px;
+    font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--grafito);
+    background:var(--white);
+    border:1px solid rgba(35,35,35,0.18);
+    border-radius:20px;
+    padding:6px 14px;
+    cursor:pointer;
+  }
+  .view-toggle:hover{border-color:var(--terracota); color:var(--terracota-dark);}
+  model-viewer.is-hidden, .photo-placeholder.is-hidden{display:none;}
+
+  .specimen-info{
+    padding:28px 32px;
+    display:flex; flex-direction:column; justify-content:center;
+    border-left:1px solid rgba(35,35,35,0.08);
+  }
+  @media (max-width:720px){ .specimen-info{border-left:none; border-top:1px solid rgba(35,35,35,0.08);} }
+
+  .specimen-name{
+    font-family:'Cinzel', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:19px;
+    color:var(--grafito);
+    margin-bottom:14px;
+  }
+  .specimen-info p.desc{
+    color:var(--piedra);
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .hint{
+    font-size:12.5px;
+    color:var(--terracota-dark);
+    border-top:1px dashed rgba(165,106,74,0.35);
+    padding-top:12px;
+    font-style:italic;
+  }
+  .hint-soft{
+    font-size:12px;
+    color:var(--piedra);
+    font-style:italic;
+    margin-top:10px;
+  }
+  .catalog-link{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase;
+    font-weight:600; color:var(--terracota);
+    border:1px solid var(--terracota); border-radius:2px;
+    padding:6px 12px;
+    margin-top:14px;
+    text-decoration:none;
+    width:fit-content;
+  }
+  .catalog-link:hover{background:var(--terracota); color:var(--white);}
+
+  .meta-list{
+    margin:4px 0 18px;
+    border-top:1px solid rgba(35,35,35,0.10);
+  }
+  .meta-row{
+    display:flex; justify-content:space-between; gap:12px;
+    padding:9px 0;
+    border-bottom:1px solid rgba(35,35,35,0.10);
+    font-size:12.5px;
+  }
+  .meta-row .k{
+    letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--piedra);
+  }
+  .meta-row .v{
+    color:var(--grafito);
+    font-weight:500;
+    text-align:right;
+  }
+
+  /* ---------- DETAIL CAROUSEL (pendiente hasta tener las fotos reales) ---------- */
+  .detail-carousel{
+    text-align:center;
+  }
+  .carousel-nav{
+    width:100%; border:none; background:transparent; cursor:pointer;
+    padding:6px 0; color:var(--piedra);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .carousel-nav:hover{color:var(--terracota-dark);}
+  .carousel-peek{
+    width:100%; height:30px;
+    background-color:var(--white);
+    background-size:cover;
+    background-position:center;
+    filter:blur(2px);
+    opacity:0.55;
+    border:1px solid rgba(35,35,35,0.10);
+  }
+  .carousel-peek.top{border-radius:4px 4px 0 0; border-bottom:none;}
+  .carousel-peek.bottom{border-radius:0 0 4px 4px; border-top:none;}
+  .carousel-main{
+    width:100%;
+    aspect-ratio:4/3;
+    background-color:var(--white);
+    background-size:cover;
+    background-position:center;
+    border:1px solid rgba(35,35,35,0.10);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white);
+  }
+  .carousel-main .ph-label{
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    background:rgba(35,35,35,0.55);
+    padding:4px 10px;
+    border-radius:2px;
+  }
+
+  .context-stage{
+    aspect-ratio:16/9;
+    background:
+      repeating-linear-gradient(135deg, rgba(35,35,35,0.05) 0 2px, transparent 2px 14px),
+      var(--grafito);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:10px;
+    color:var(--marfil);
+    position:relative;
+  }
+  .context-stage .ph-label{
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:rgba(242,239,233,0.75);
+  }
+
+  .statement{
+    max-width:600px;
+    margin:0 auto;
+    text-align:center;
+    font-size:clamp(17px, 2.4vw, 21px);
+    line-height:1.6;
+    color:var(--grafito);
+  }
+
+  .contact-block{
+    text-align:center;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .contact-block p{
+    color:var(--piedra);
+    font-size:15px;
+    margin-bottom:28px;
+  }
+  .btn-primary{
+    display:inline-block;
+    background:var(--grafito);
+    color:var(--marfil);
+    text-decoration:none;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:14px 32px;
+    border-radius:2px;
+  }
+  .contact-secondary{
+    margin-top:18px;
+    font-size:12.5px;
+    color:var(--piedra);
+  }
+  .contact-secondary a{
+    color:var(--terracota-dark);
+    text-decoration:none;
+    border-bottom:1px solid rgba(124,79,55,0.35);
+  }
+
+  footer{
+    text-align:center;
+    padding:40px 24px 56px;
+    color:var(--piedra);
+    font-size:12.5px;
+    border-top:1px solid rgba(35,35,35,0.08);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  footer img{width:46px; height:46px; margin:0 0 28px; opacity:0.85;}
+  footer .divider{margin:0 auto 28px;}
+  footer .divider{margin-bottom:18px;}
+
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .reveal.d1{transition-delay:0.08s;}
+  .reveal.d2{transition-delay:0.16s;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  @media (max-width:480px){
+    .hero{padding:88px 20px 64px;}
+    .specimen-info{padding:24px 22px;}
+    section.block{padding:56px 20px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="kicker">Museografía impresa · Osorno, Chile</div>
+    <p class="purpose">Historia natural, fuera del museo.</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAMCklEQVR4nO3cX2tcd37H8e/vzMjWugaXLGkgTtdJ7L0o9F9yVQq96DMI9FH0qRR60afSixa2FyVQ0osSCC0rGna8qSleakwv2pLFkqXz64XGWe2upRGfleZIc14vGDzWzMVXjHTec36/M2off/zxz6rqbgHA5R0uq+r7rbU7U08CwO3Rez9ZttaOq2pv6mEAuD1aa6+XVdXWNwC4lN57G6YeAoDbabnh8d57P9nKJADcKK21oarOPdG4MCCttTYMw6bIALCDeu/Vez/38fPi0FtrbRzHp1X1RWtt0Xsfr2VCAG6U1trQez9prf1Ja+2H/bQiv7ZX/taA9N5PhmFYttb+4enTp3957dMCcOM8fvz4b1prPxzH8aS19mu92LQ8dbeqlo8ePVo+e/bs+HpGBOAmOXPMv/BD5hs30avq+MMPPywBAZiHM8f88zdA6oLddQC4iIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABBZTj3AlrUSTeD6jFXVpx5iW+YWkF5VJ1MPAbAL5hKQVlX93Xffvf/gwYM/7707CwGuXGvtH1er1f/W+pgz9TzXbVYBuXfv3u+21v62tTb1PMAOOjo6+qSqvioB2T2ttXEcx9d1ug/S6/RFBrgSi8ViVkvkswrI2qIEBLgGvfdZHVPsBQAQERAAInNcwupnbgCE5hiQxfrfWa1VAly1WQWktdZ774dlEx24Bq21Wa1szCUgY1XVO++8883Lly9/b24vMnD9eu/t/v37z9f/HScdZkvmEpCqqvryyy9fV9U3U88BsAtmFZA1V54B12UWZx5vzDEgs3qBAa6Ld+MARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAESWUw8wgcXUAwA7a6yqPvUQ2zLHgJxMPQDALphLQFpV9ffee++37t+//2e99zb1QMDu2dvb+6evv/76/2p9zJl6nus2q4Ds7+//YBiGv596GGA3vXr16pOq+qoEZPe01sZxHF/X6cUDvU5fZIArMQzDOPUM2zSrgKwtSkAAfmMu4wUgIiAARAQEgIiAABCZY0DefM820AF+A3O5Cmusqloul//Re/99HyQErsM4jqs3dycdZEvmEpCqqlqtVodV9eOp5wDYBbMKyNocl+2A7ZjFmccbcwzIrF5ggOvi3TgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIAJHl1ANMYDH1ANwqJ1MPADfVHAPigABwBWYVkA8++OB7d+/e/eOp5+B2GIZhfP/997/8/PPPj6eeBW6iuQRkqKpxsVg8aq19MfUw3HyttRrH8ecvXrz4QVX9d1W1quoTjwU3ylwCUlVVrbXeez+p06D0Oj0owK9687PxahgG0YBzzCoga61+EQ4B4Txnf06At3AZLwARAQEgIiAARAQEgMgcA2IDnU38jMAlzOUqrLGq6t69e98cHh7+wdTDcPP13msYhvHg4OB/3nxp0oHgBppLQKqq6uDg4Kiqfjz1HAC7YFYBWZvjsh25ceoB4KaaY0AcEACugHfjAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEllMPwJVbTD0AzNhYVX3qIbZFQHbPydQDAPMgIDvkyZMnd3vvn/beh9Za7723qWeCOfn222+/evHixbdTz7EtArIbhqoaj46OHu7t7X0xDKdbW63pB2zT/v7+J1X1Va1/J6ed5voJyG7pvffDqtqr03VYBYEtGoZh56NxloDsnmF9ExDgWrmMF4CIgAAQERAAIvZAdk+vX3yYyR4IXL9WM/19E5Ad01q74/Jd2LpWVTW3z14JyG4Yq6ru3Lnzs977n47jOLTWZvPnFGBqvffWWuuHh4c/WX9pFpfzCsgOWa1Wh1X1z1PPAcyDgOwef0wRpjOrv0UnILtnVj/AwHRcxgtAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQGS54fFWVcPLly+HEhuATcapB9imTQF5XVXjwcHB0TaGAeD2OC8graqq9/47H3300R8Ow7A3DMPJFucCuHWOjo7+/dmzZ6+mnmNb3hqQ1tpiHMdqrX3WWvusqqr3vtXBAG6bYRj+qKr+tU6X/Hd+OWvTEtZ3BASAs2yMAxAREAAiAgJAREAAiGzaRO/rGwD8ko2fRG+tta1MAnDLjeM4q1Wdtwak936yWCwW4zj+XVX91TiOCx8kBLjYgwcPfrK+O4uVm/POQN588/+5Wq0+39YwADti1gF5405VLZ48ebJcrVbH2xgI4BYbaybxqLrcJvrJw4cP22q1soQFwHdmteEDwNUREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQWW54vFXV8PLly6HEBmCTceoBtunCgLTWjqtqPDg4ONrSPADcEucFpK3//e1Hjx59uFgs9pbL5fG2hgK4jZbL5fM5veF+a0Baa4txHKuq/mKxWHxWVe34WD8ALnJ8fPxpVf1bnS757/xy1qY9kKG1Zu8D4BLGcWybn7U7NgWkqqpf+xQA3DqXCcisigrA5VieAiAiIABENi1h9bIHAsBbbPogYWuttd57tWYrBOAix8fHs1rVeWtAeu8nwzAseu8/qqq/7r0PVXWy3dEAbpW2v7//dH1/Fis3552B9NZa9d5/ulqtfrTViQBuv1kH5I27VbV48uTJcrVa+Sg6wMXGmkk8qi63iX7y8OHDtlqtLGEB8J1ZbfgAcHUEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAyHLD462qFs+fP19UVd/CPABM7Mwxv130vE0BOaqqk9VqdXJVgwFws5055h9e9Lz2+PHjn1fV937l67211nrvz3rv/7K+7wwEYAZaa0PvfayqT4dh+Hh9/P+ls5He++F5ZyCt916ttUfDMDy69mkBuHF677U+d3jrUtaFS1j9lOUrgHlpdboHsqgL9kEus4m+6TkAzJDLeAGILOv0NMUGOQCX1lrry6raa61deK0vAJzVe99b9t7/q/d+r5yFAHA5rape/T9t4QbWGmFK+AAAAABJRU5ErkJggg==" alt="" aria-hidden="true">
+    <h1>STRATUM STUDIO</h1>
+    <p class="tagline">Piezas de exhibición impresas en 3D, pensadas para observarse de cerca.</p>
+    <div class="divider"></div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+      <span class="eyebrow">Espécimen digitalizado</span>
+      <h2 class="block-title">El objeto, no su fotografía</h2>
+
+      <div class="specimen-card reveal">
+        <div class="specimen-stage">
+          <div class="photo-placeholder" id="photo-view">
+            <span class="ph-label">Foto de estudio — pendiente</span>
+          </div>
+          <model-viewer
+            id="model-view"
+            class="is-hidden"
+            src="pachycephalosaurus.glb"
+            camera-controls
+            auto-rotate
+            auto-rotate-delay="0"
+            rotation-per-second="18deg"
+            shadow-intensity="0.6"
+            exposure="0.9"
+            style="background-color:transparent;">
+          </model-viewer>
+          <button class="view-toggle" id="toggle-btn" type="button">Ver en 3D</button>
+        </div>
+        <div class="specimen-info">
+          <div class="specimen-name">Pachycephalosaurus wyomingensis</div>
+          <p class="desc">Este modelo digital es la referencia geométrica exacta de la pieza. La versión impresa conserva cada proporción, pero con el carácter propio del filamento: la textura y las líneas de capa que identifican a cada espécimen como una pieza hecha, no renderizada.</p>
+
+          <div class="meta-list">
+            <div class="meta-row"><span class="k">Espécimen</span><span class="v">Nº 001</span></div>
+            <div class="meta-row"><span class="k">Peso</span><span class="v">63,1 g</span></div>
+            <div class="meta-row"><span class="k">Tiempo de impresión</span><span class="v">5 h 59 m</span></div>
+            <div class="meta-row"><span class="k">Material</span><span class="v">PLA · gris</span></div>
+          </div>
+
+          <p class="hint">Cada ángulo revela algo distinto de la anatomía.</p>
+          <a class="catalog-link" href="coleccion.html">Ver catálogo <i>&#8594;</i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <span class="eyebrow">Detalle</span>
+      <h2 class="block-title">El acabado, de cerca</h2>
+      <p class="block-desc">Tres miradas a la misma pieza: la textura del filamento, el registro de cada capa impresa, y la placa que la identifica.</p>
+
+      <div class="specimen-card reveal">
+        <div class="specimen-stage" style="flex-direction:column; padding:20px;">
+          <button class="carousel-nav" id="detail-up" type="button" aria-label="Detalle anterior">
+            <span style="font-size:14px;">&#9650;</span>
+          </button>
+          <div class="carousel-peek top" id="detail-peek-top"></div>
+          <div class="carousel-main" id="detail-main">
+            <span class="ph-label">Imagen de referencia</span>
+          </div>
+          <div class="carousel-peek bottom" id="detail-peek-bottom"></div>
+          <button class="carousel-nav" id="detail-down" type="button" aria-label="Siguiente detalle">
+            <span style="font-size:14px;">&#9660;</span>
+          </button>
+        </div>
+        <div class="specimen-info">
+          <div class="specimen-name" id="detail-name">Textura</div>
+          <p class="desc" id="detail-desc">Superficie del filamento, vista de cerca.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <span class="eyebrow">El sistema completo</span>
+      <h2 class="block-title">Fósil, base, soporte y placa</h2>
+      <p class="block-desc">El espécimen no es una pieza aislada — es un conjunto pensado para exhibirse completo, tal como llega ensamblado.</p>
+
+      <div class="specimen-card reveal">
+        <div class="context-stage">
+          <div class="ph-label">Foto de contexto — pendiente</div>
+        </div>
+        <div class="specimen-info">
+          <div class="specimen-name">&nbsp;</div>
+          <p class="desc">El kit completo, en un espacio cotidiano — escritorio, estantería, oficina.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <p class="statement reveal">Stratum Studio nace de la observación geológica: capas, sedimentos, tiempo acumulado. Cada pieza traduce ese proceso en volumen, sin copiar la naturaleza y sin ocultar cómo fue hecha.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap contact-block">
+      <span class="eyebrow">Seguimiento</span>
+      <p>Nuevas piezas, procesos y adelantos de colección se publican primero en Instagram.</p>
+      <a class="btn-primary" href="https://www.instagram.com/stratumstudio.cl" target="_blank" rel="noopener">@stratumstudio.cl</a>
+      <div class="contact-secondary">También en Facebook — <a href="https://www.facebook.com/profile.php?id=61591218500269" target="_blank" rel="noopener">Stratum Studio</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAMCklEQVR4nO3cX2tcd37H8e/vzMjWugaXLGkgTtdJ7L0o9F9yVQq96DMI9FH0qRR60afSixa2FyVQ0osSCC0rGna8qSleakwv2pLFkqXz64XGWe2upRGfleZIc14vGDzWzMVXjHTec36/M2off/zxz6rqbgHA5R0uq+r7rbU7U08CwO3Rez9ZttaOq2pv6mEAuD1aa6+XVdXWNwC4lN57G6YeAoDbabnh8d57P9nKJADcKK21oarOPdG4MCCttTYMw6bIALCDeu/Vez/38fPi0FtrbRzHp1X1RWtt0Xsfr2VCAG6U1trQez9prf1Ja+2H/bQiv7ZX/taA9N5PhmFYttb+4enTp3957dMCcOM8fvz4b1prPxzH8aS19mu92LQ8dbeqlo8ePVo+e/bs+HpGBOAmOXPMv/BD5hs30avq+MMPPywBAZiHM8f88zdA6oLddQC4iIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABBZTj3AlrUSTeD6jFXVpx5iW+YWkF5VJ1MPAbAL5hKQVlX93Xffvf/gwYM/7707CwGuXGvtH1er1f/W+pgz9TzXbVYBuXfv3u+21v62tTb1PMAOOjo6+qSqvioB2T2ttXEcx9d1ug/S6/RFBrgSi8ViVkvkswrI2qIEBLgGvfdZHVPsBQAQERAAInNcwupnbgCE5hiQxfrfWa1VAly1WQWktdZ774dlEx24Bq21Wa1szCUgY1XVO++8883Lly9/b24vMnD9eu/t/v37z9f/HScdZkvmEpCqqvryyy9fV9U3U88BsAtmFZA1V54B12UWZx5vzDEgs3qBAa6Ld+MARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAESWUw8wgcXUAwA7a6yqPvUQ2zLHgJxMPQDALphLQFpV9ffee++37t+//2e99zb1QMDu2dvb+6evv/76/2p9zJl6nus2q4Ds7+//YBiGv596GGA3vXr16pOq+qoEZPe01sZxHF/X6cUDvU5fZIArMQzDOPUM2zSrgKwtSkAAfmMu4wUgIiAARAQEgIiAABCZY0DefM820AF+A3O5Cmusqloul//Re/99HyQErsM4jqs3dycdZEvmEpCqqlqtVodV9eOp5wDYBbMKyNocl+2A7ZjFmccbcwzIrF5ggOvi3TgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIAJHl1ANMYDH1ANwqJ1MPADfVHAPigABwBWYVkA8++OB7d+/e/eOp5+B2GIZhfP/997/8/PPPj6eeBW6iuQRkqKpxsVg8aq19MfUw3HyttRrH8ecvXrz4QVX9d1W1quoTjwU3ylwCUlVVrbXeez+p06D0Oj0owK9687PxahgG0YBzzCoga61+EQ4B4Txnf06At3AZLwARAQEgIiAARAQEgMgcA2IDnU38jMAlzOUqrLGq6t69e98cHh7+wdTDcPP13msYhvHg4OB/3nxp0oHgBppLQKqq6uDg4Kiqfjz1HAC7YFYBWZvjsh25ceoB4KaaY0AcEACugHfjAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEllMPwJVbTD0AzNhYVX3qIbZFQHbPydQDAPMgIDvkyZMnd3vvn/beh9Za7723qWeCOfn222+/evHixbdTz7EtArIbhqoaj46OHu7t7X0xDKdbW63pB2zT/v7+J1X1Va1/J6ed5voJyG7pvffDqtqr03VYBYEtGoZh56NxloDsnmF9ExDgWrmMF4CIgAAQERAAIvZAdk+vX3yYyR4IXL9WM/19E5Ad01q74/Jd2LpWVTW3z14JyG4Yq6ru3Lnzs977n47jOLTWZvPnFGBqvffWWuuHh4c/WX9pFpfzCsgOWa1Wh1X1z1PPAcyDgOwef0wRpjOrv0UnILtnVj/AwHRcxgtAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQGS54fFWVcPLly+HEhuATcapB9imTQF5XVXjwcHB0TaGAeD2OC8graqq9/47H3300R8Ow7A3DMPJFucCuHWOjo7+/dmzZ6+mnmNb3hqQ1tpiHMdqrX3WWvusqqr3vtXBAG6bYRj+qKr+tU6X/Hd+OWvTEtZ3BASAs2yMAxAREAAiAgJAREAAiGzaRO/rGwD8ko2fRG+tta1MAnDLjeM4q1Wdtwak936yWCwW4zj+XVX91TiOCx8kBLjYgwcPfrK+O4uVm/POQN588/+5Wq0+39YwADti1gF5405VLZ48ebJcrVbH2xgI4BYbaybxqLrcJvrJw4cP22q1soQFwHdmteEDwNUREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQWW54vFXV8PLly6HEBmCTceoBtunCgLTWjqtqPDg4ONrSPADcEucFpK3//e1Hjx59uFgs9pbL5fG2hgK4jZbL5fM5veF+a0Baa4txHKuq/mKxWHxWVe34WD8ALnJ8fPxpVf1bnS757/xy1qY9kKG1Zu8D4BLGcWybn7U7NgWkqqpf+xQA3DqXCcisigrA5VieAiAiIABENi1h9bIHAsBbbPogYWuttd57tWYrBOAix8fHs1rVeWtAeu8nwzAseu8/qqq/7r0PVXWy3dEAbpW2v7//dH1/Fis3552B9NZa9d5/ulqtfrTViQBuv1kH5I27VbV48uTJcrVa+Sg6wMXGmkk8qi63iX7y8OHDtlqtLGEB8J1ZbfgAcHUEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAiIAAEBEQACICAkBEQACICAgAEQEBICIgAEQEBICIgAAQERAAIgICQERAAIgICAARAQEgIiAARAQEgIiAABAREAAiAgJAREAAiAgIABEBASAiIABEBASAyHLD462qFs+fP19UVd/CPABM7Mwxv130vE0BOaqqk9VqdXJVgwFws5055h9e9Lz2+PHjn1fV937l67211nrvz3rv/7K+7wwEYAZaa0PvfayqT4dh+Hh9/P+ls5He++F5ZyCt916ttUfDMDy69mkBuHF677U+d3jrUtaFS1j9lOUrgHlpdboHsqgL9kEus4m+6TkAzJDLeAGILOv0NMUGOQCX1lrry6raa61deK0vAJzVe99b9t7/q/d+r5yFAHA5rape/T9t4QbWGmFK+AAAAABJRU5ErkJggg==" alt="" aria-hidden="true">
+    <div class="divider"></div>
+    Stratum Studio · Osorno, Chile
+  </footer>
+
+  <script>
+    const items = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(el => io.observe(el));
+
+    const toggleBtn = document.getElementById('toggle-btn');
+    const photoView = document.getElementById('photo-view');
+    const modelView = document.getElementById('model-view');
+    let showingModel = false;
+    toggleBtn.addEventListener('click', () => {
+      showingModel = !showingModel;
+      photoView.classList.toggle('is-hidden', showingModel);
+      modelView.classList.toggle('is-hidden', !showingModel);
+      toggleBtn.textContent = showingModel ? 'Ver foto' : 'Ver en 3D';
+    });
+
+    const detailItems = [
+      { label: "Textura", desc: "Superficie del filamento, vista de cerca.", img: "https://picsum.photos/seed/stratum-textura/800/600" },
+      { label: "Líneas de capa", desc: "El registro visible de cada pasada de impresión.", img: "https://picsum.photos/seed/stratum-capas/800/600" },
+      { label: "Placa", desc: "El grabado que identifica al espécimen.", img: "https://picsum.photos/seed/stratum-placa/800/600" }
+    ];
+    let detailIdx = 0;
+    function renderDetail(){
+      const n = detailItems.length;
+      const prev = detailItems[(detailIdx - 1 + n) % n];
+      const curr = detailItems[detailIdx];
+      const next = detailItems[(detailIdx + 1) % n];
+      document.getElementById('detail-peek-top').style.backgroundImage = `url('${prev.img}')`;
+      document.getElementById('detail-main').style.backgroundImage = `url('${curr.img}')`;
+      document.getElementById('detail-peek-bottom').style.backgroundImage = `url('${next.img}')`;
+      document.getElementById('detail-name').textContent = curr.label;
+      document.getElementById('detail-desc').textContent = curr.desc;
+    }
+    document.getElementById('detail-up').addEventListener('click', () => {
+      detailIdx = (detailIdx - 1 + detailItems.length) % detailItems.length;
+      renderDetail();
+    });
+    document.getElementById('detail-down').addEventListener('click', () => {
+      detailIdx = (detailIdx + 1) % detailItems.length;
+      renderDetail();
+    });
+    renderDetail();
+  </script>
+
+</body>
+</html>
